@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>补充账号资料-翼升科技</title>
+  <link rel="stylesheet" href="/static/css/com.css">
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <style>
+        .loginFrom{
+            width: 100%;
+        }
+        .formInput{
+            position: relative;
+        }
+        .info,.info2,.info3,.info4{
+            width: 168px;
+            height: auto;
+            margin-right: 14px;
+            position: absolute;
+            top:6px;
+            right: 0;
+        }
+        /*密码*/
+        .info2{
+            top: 103px;
+        }
+        /*确认密码*/
+        .info3{
+            top: 158px;
+        }
+        /*公司名称*/
+        .info4{
+            top: 216px;
+        }
+        .info p,.info2 p,.info3 p,.info4 p{
+            padding: 0;
+            font-size: 14px;
+            color: red;
+            text-align: left;
+        }
+        .agreement{
+            width:255px;
+            margin: 0 auto 18px auto;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        .agreement span{
+            color: #B7B7B7;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .registerSubs{
+            width: 248px;
+            height: 35px;
+            background-color: #FD7242;
+            text-align: center;
+            line-height: 35px;
+            display: block;
+            color: #fff;
+            margin: 10px auto 0;
+        }
+        .sendCodes{
+            display: inline-block;
+            line-height: 35px;
+            font-size: 12px;
+            color: #fff;
+            padding: 0 5px;
+            width: 76px;
+            text-align: center;
+            background-color: #ff6d00;
+            border: none;
+        }
+        #material_sendCode{
+            height:35px;
+        }
+    </style>
+</head>
+<body>
+<div class="loginComponent">
+    <div class="loginMain">
+        <p>请补充账号资料</p>
+        <form action="" class="loginFrom">
+            <div class="formInput">
+
+                <i class="mobile"></i>
+                <input type="text" name="mobile" id="mobile" placeholder="手机号码" maxlength="11" >
+            </div>
+            <div class="info">
+                <p id="msg"></p>
+            </div>
+            <div class="formInput sendMsg" style="overflow: hidden">
+                <i class="verificationCode"></i>
+                <input type="text" name="smscode" id="smscode" maxlength="6"placeholder="验证码" >
+                <a href="javascript:;" class="sendCodes" id="material_sendCode">发送验证码</a>
+            </div>
+            <div class="formInput">
+                <i class="password"></i>
+                <input type="password" name="password" id="password" placeholder="输入密码" >
+            </div>
+            <div class="info2">
+                <p id="msg1"></p>
+            </div>
+            <div class="formInput">
+                <i class="password"></i>
+                <input type="password" name="repassword" id="repassword" placeholder="确认密码" >
+            </div>
+            <div class="info3">
+                <p id="msg2"></p>
+            </div>
+            <div class="formInput">
+                <i class="company"></i>
+                <input type="text" name="company" id="company" placeholder="公司名称">
+            </div>
+            <div class="info4">
+                <p id="msg3"></p>
+            </div>
+        </form>
+        <a href="javascript:;" class="registerSubs" id="material">确定</a>
+    </div>
+
+    <div class='backHome'>
+        <a href='/home/index.html' class='backHomea'></a>
+    </div>
+</div>
+</body>
+
+<script src="/static/js/jquery.min.js"></script>
+<script>
+    //手机号码
+    var reg = /^1[3-9]\d{9}$/;
+    var regpsw = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,20}$/;
+    var flagPhone = false;
+    var flagPWD = false;
+    var flagRePWD = false;
+    var flagCom = false;
+    $('#mobile').blur(function () {
+        var mob = $(this).val()
+        console.log(mob)
+        flagPhone = reg.test($(this).val());
+        if(mob === ''){
+            $('#msg').html('*手机号不能为空')
+        }else if(flagPhone === false){
+            $('#msg').html('*请填写正确的手机号')
+        }else {
+            $('#msg').html("")
+            flagPhone = true;
+        }
+    })
+    //密码
+    $('#password').blur(function () {
+        var mobpsw = $(this).val()
+        flagPWD = regpsw.test(mobpsw);
+        if(mobpsw === ''){
+            $('#msg1').html('*密码不能为空')
+        }else if(flagPWD === false){
+            $('#msg1').html('*请输入长度8-20且必须包含大小写字母和数字的字符')
+        }else {
+            $('#msg1').html('')
+            flagPWD = true;
+        }
+    })
+    //确认密码
+    $('#repassword').blur(function () {
+        var paw1 = $('#password').val()
+        flagRePWD = (paw1 === $(this).val())
+        if(!flagRePWD){
+            $('#msg2').html('*两次输入的密码不一致，请重新输入')
+        }else if($(this).val() === ''){
+            $('#msg2').html('*请再次输入你的密码')
+        }else {
+            $('#msg2').html('')
+            flagRePWD = true;
+        }
+    })
+    $('#company').blur(function () {
+        if($(this).val() === ''){
+            $('#msg3').html('*请填写公司名称')
+        }else {
+            $('#msg3').html('')
+            flagCom = true;
+        }
+    })
+    //修改
+    //验证码
+    var countdown=60;
+    var timeflag = true;
+    function settime(obj,inpobj) {
+//
+        if (countdown == 0) {
+            timeflag = true;
+            obj.innerHTML="重新发送";
+            countdown = 60;
+            return;
+        } else {
+            obj.innerHTML="重新发送(" + countdown + "s)";
+            countdown--;
+        }
+        setTimeout(function() {
+                settime(obj) }
+            ,1000)
+
+    };
+    $('#material_sendCode').click(function () {
+        if(timeflag == true){
+            if (!reg.test($('#mobile').val())) {
+                alert('手机号格式不正确');
+            } else {
+                var that = this;
+                $.ajax({
+                    type:'POST',
+                    url:'/home/login/sendSmsCode',
+                    data:{mobile:$('#mobile').val()},
+                    dataType:'json',
+                    success:function (data) {
+                        if(data.status == 200){
+                            timeflag = false
+                            settime(that);
+                        }else{
+                            alert(data.message);
+                        }
+                    }
+                });
+            }
+        }else{
+
+        }
+    });
+
+    $('#material').click(function () {
+//        if(window.event){//IE下阻止冒泡
+//            event.cancelBubble  = true;
+//        }else{
+//            event.stopPropagation();
+//        }
+        if(flagPhone && flagPWD && flagRePWD && flagCom ){
+            $.ajax({
+                type: 'POST',
+                url: '/home/login/addAuthInfo',
+                data: {
+                    mobile: $('#mobile').val(),
+                    sms_code: $('#smscode').val(),
+                    password: $('#password').val(),
+                    repassword: $('#repassword').val(),
+                    company:$('#company').val()
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == 200) {
+                        window.location.href = data.data.url;
+                    }else{
+                        alert(data.message);
+                    }
+                }
+            });
+        }else{
+            alert('请规范填写信息')
+        }
+
+    })
+    //协议显示
+    $('.blocks').click(function () {
+        $('.mask-protocol').toggle()
+    })
+    $('.mask-protocol-close').click(function () {
+        $('.mask-protocol').toggle()
+    })
+</script>
+</html>

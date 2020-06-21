@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付-翼升科技</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <!--<meta http-equiv="Cache-Control" content="no-siteapp"/>-->
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <link rel="stylesheet" href="/home/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/home/assets/css/common.css"/>
+    <link rel="stylesheet" href="/home/assets/css/pay.css"/>
+
+</head>
+<body>
+<!-- header -->
+<div id="myHeader"></div>
+<!--<?php if (!isset($_COOKIE['access_token'])){header("location:/home/login");}?>-->
+<!-- /header -->
+
+<div class="am-g payment">
+    <div class="am-u-sm-8 am-u-md-12 am-u-lg-8 am-u-sm-centered">
+        <h1 class="payment-title">支付信息</h1>
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 payment-main">
+            <form class="am-form am-u-sm-centered paylist">
+                <div class="payment-list">
+                    <label>用户名：</label><span id="oruname"></span>
+                </div>
+                <div class="payment-list">
+                    <label>公司名称：</label><span id="orcompany"></span>
+                </div>
+                <div class="payment-list">
+                    <label>联系人：</label><span id="orname"></span>
+                </div>
+                <div class="payment-list">
+                    <label>联系电话：</label><span id="orphone"></span>
+                </div>
+                <div class="payment-list">
+                    <label>联系邮箱：</label><span id="oremail"></span>
+                </div>
+                <div class="payment-list-type">
+                    <label>版本类型：</label><span id="ortype"></span>
+                </div>
+                <div class="payment-list-type" style="height: 6rem">
+                    <label>版本年限：</label>
+                    <p style="clear: none"></p>
+                    <p style="margin: 0;height: 2.4rem;clear: none;font-size: 14px;padding-left: 6.2rem;color: #919090">开始时间：<span id="star_time"></span></p>
+                    <p style="margin: 0;height: 2.4rem;clear: none;font-size: 14px;padding-left: 6.2rem;color: #919090">结束时间：<span id="end_time"></span></p>
+                </div>
+                <div class="payment-list-type">
+                    <label>支付方式：</label>
+                    <ul class="payment-ul2">
+                        <li data-payment="1">微信</li>
+                        <li data-payment="2">支付宝</li>
+                        <!--<li data-payment="3" class="trans">转账</li>-->
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 payment-footer">
+            <div class="am-u-sm-8 am-u-md-8 am-u-lg-8">
+                <span class="payment-pic">合计：0.00元</span>
+            </div>
+            <div class="am-u-sm-4 am-u-md-4 am-u-lg-4">
+                <input type="button" value="支付" class="onsumit" id="onsuborder">
+            </div>
+        </div>
+        <div class="mask payerm">
+        </div>
+        <div class="paymask">
+            <div class="paytitle"><img src="/home/assets/i/weipay.png" class="payimg" alt="">微信支付</div>
+            <div class="payerweim">
+                <p>打开手机微信，扫一扫下面的二维码，即可完成支付</p>
+                <p class="timed"></p>
+                <img src="" class="erweima" alt="">
+            </div>
+            <div class="paydone">
+                <img src="/home/assets/i/paydone.png" class="paydoneimg" alt="">付款成功
+                <p>即将为您跳转到个人中心</p>
+            </div>
+            <span class="payclose">X</span>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- footer -->
+<div id="myFooter"></div>
+<!-- /footer -->
+<script src="/home/assets/js/jquery.min.js"></script>
+<script src="/home/assets/js/jquery.lazyload.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="/home/assets/js/footer.js"></script>
+<script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+    var num = '';
+    var version = null;
+    var money = null;
+//    var uid = null;
+    var payment = null; //支付方式
+    $(function () {
+        num = GetPar("num");
+        if(!num){
+            window.location.href = '/home/payment.html'
+            return;
+        }
+        $.ajax({
+            type:"post",
+            url:"/home/order_form/read",
+            data:{'number': num},
+            dataType:'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success:function (res) {
+                if(res.status == 400){
+                    alert(res.message);
+                }else {
+                    var data = res.data;
+                    version = data.edition;
+                    money = data.money;
+//                    uid = data.user_id;
+                    $("#orcompany").html(data.company);
+                    $("#orname").html(data.nickname);
+                    $("#oruname").html(data.nickname);
+                    $("#orphone").html(data.mobile);
+                    $("#oremail").html(data.email);
+                    $("#ortype").html(data.edition);
+                    $("#star_time").html(data.start_time);
+                    $("#end_time").html(data.end_time);
+                    $(".payment-pic").html("合计：" + data.money);
+                }
+            }
+        })
+
+    });
+    $('.payment-ul2 li').click(function () {
+        $(this).parent().children('li').removeClass('bgImg')
+        $(this).toggleClass('bgImg')
+        payment = $(this).data("payment");
+    })
+    $("#onsuborder").click(function () { //支付订单
+        if(payment == null){
+            alert('请选择支付方式')
+        }else{
+            if(payment == '1'){ //微信
+                wxpay(num);
+            }else if(payment == '2'){
+                window.location.href = "/home/alipay/pagePay?number="+num
+            }
+//            else if(payment == '3'){ //转账
+//                transfer(num,payment);
+//            }
+        }
+    })
+    $(".payclose").click(function () {
+        $(".paymask").hide()
+        $(".payerm").hide()
+        clearInterval(timer);
+        clearInterval(ytimer);
+        count = 299;
+    });
+    $(".back_login").click(function () {
+        $(".othmask").hide()
+    });
+    var ytimer,count = 299;
+    $(".timed").click(function () {//刷新二维码
+        if(count == 299){
+            wxpay(num);
+        }
+    });
+
+    function wxpay(onum) {
+        $.ajax({
+            type:"Post",
+            url:'/home/we_chat/unifiedorder',
+            data:{order_number:onum},
+            dataType:'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (data) {
+                if(data.status == 200){
+                    $(".erweima").show();
+                    $(".erweima").attr("src",data.data.qr_file_path)
+                    $(".payerm").show()
+                    $(".paymask").show()
+                    //二维码有效时间
+                    ytimer = setInterval(function () {
+                        count -- ;
+                        $(".timed").html("支付码有效时间"+count+"s")
+                        if(count <= 0){
+                            clearInterval(ytimer);
+                            clearInterval(timer)
+                            $(".timed").html("支付码已失效，点击刷新")
+                            $(".erweima").hide();
+                            count = 299;
+                        }
+                    },1000);
+
+                    //计时器，每隔X秒，查询一次订单状态
+                    var sdata = {'number': num,'pay_type':payment}
+                    setTimeout(function () {timecheck(sdata); }, 3000);
+
+                }else{
+                    alert(data.message);
+                }
+            }
+        })
+    };//微信支付
+//    function transfer(num,pay) {//转账
+//        $.ajax({
+//            type:"post",
+//            url:"/home/order_form/ordertransferaccounts",
+//            data:{'number': num,"payment":pay},
+//            dataType:'json',
+//            xhrFields: {
+//                withCredentials: true
+//            },
+//            success:function (res) {
+//                if(res.status == 200){
+//                    window.location.href="/home/transfer.html"
+//                }else{
+//                    alert(res.message);
+//                }
+//            }
+//        })
+//    };
+    var timer ;
+    function timecheck(sdata) {
+      timer=setInterval(function(){checkPay(sdata)}, 2000);
+    }
+    function checkPay(sdata) { //检查微信扫码是否支付成功
+            $.ajax({
+                type:"Post",
+                url:"/home/order_form/query",
+                data:sdata,
+                dataType:'json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (data) {
+
+                    if(data.status == 200){
+                        clearInterval(timer);
+                        $(".paydone").show();
+                        setTimeout(function () {window.location.href = '/home/user/usercenter.html?pay=done'; }, 4000);
+                    }else{
+                        console.log(data.message)
+                    }
+                }
+            })
+    };
+    function GetPar(name) { //获取链接参数
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r != null) return decodeURIComponent(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

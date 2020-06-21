@@ -1,0 +1,81 @@
+.container{
+    height: calc(100vh - 92px);
+    background: url("../../assets/i/freeusebg.png") no-repeat 100% 100%;
+    padding-top: 120px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.container .am-container{
+    height: 508px;
+    border-radius:10px;
+    padding: 0 !important;
+}
+.container .am-container .left{
+    height: 100%;
+    width: 50%;
+    padding-right: 0 !important;
+}
+.container .am-container .left img{
+    height: 100%;
+    width: 100%;
+}
+.container .am-container .right{
+    text-align: center;
+    height: 100%;
+    width: 50%;
+    border: 1px solid red;
+}
+.container .am-container .right .title{
+    font-size:20px;
+    font-family:SimHei;
+    font-weight:400;
+    color:rgba(81,85,103,1);
+     margin-top: 46px;
+}
+.container .am-container .right .inp{
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width: 300px;
+    margin: 30px auto 0;
+}
+.iconfont{
+    font-size: 20px !important;
+}
+.container .am-container .right .inp input{
+    height: 33px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+.container .am-container .right .inp button{
+    height: 33px;
+    width: 270px;
+    margin-left: 30px;
+    background:rgba(253,122,66,1);
+    border: none;
+    color: white;
+    border-radius: 2px;
+}
+.container .am-container .right .inp button :focus{
+    border: none;
+}
+.sendCode{
+    display: inline-block;
+    width: 100px;
+    height: 33px;
+    font-size: 12px;
+    background:rgba(253,122,66,1);
+    border-radius:2px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+.tip{
+    position: absolute;
+    color: red;
+    font-size: 12px;
+    top: 35px;
+    left: 38px;
+}

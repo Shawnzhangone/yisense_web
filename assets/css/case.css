@@ -1,0 +1,548 @@
+.case-main{
+    width: 100%;
+}
+.am-box-img{
+    height: 240px;
+    margin-bottom: 4rem;
+    background-size: 100% 100%;
+    background: url("/home/assets/i/exhibitionImg.png") no-repeat;
+}
+/*文字内容*/
+.am-box-main{
+    text-align: center;
+}
+.contentDiv{
+    min-height: 100px;
+}
+/*导航*/
+.am-breadcrumb li a{
+    color: black;
+}
+.am-breadcrumb li a:hover{
+    color: #ff6d00;
+}
+.am-thumbnail{
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+.am-thumbnail-img{
+    /*height: 14rem;*/
+    overflow: hidden;
+}
+.am-thumbnail-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.am-box-mask{
+    top: 0;
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 15rem;
+    display: none;
+}
+.am-thumbnail:hover{
+    cursor: pointer;
+}
+.am-thumbnail-mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    top: 0;
+    position: absolute;
+    display: none;
+}
+.mask-img{
+    padding-top: 10%;
+    height: 80%;
+    width: 100%;
+}
+.mask-img-box{
+    width: 80%;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 1px #fff solid;
+    overflow: hidden;
+}
+.mask-img-box img{
+    width: 100%;
+}
+.mask-btn{
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 5% 0;
+}
+.mask-img .am-btn{
+    width: 30%;
+    height: 15%;
+    border-radius: .5rem;
+    padding: 0;
+    margin-top: 1rem;
+}
+.mask-shiyong{
+    width: 100%;
+}
+.mask-shiyong span{
+    display: inline-block;
+}
+.mask-shiyong img{
+    margin-top: -.2rem;
+}
+.am-box-list{
+    overflow: hidden;
+}
+.am-breadcrumb{
+    margin-bottom: 2rem;
+}
+.am-breadcrumb>li+li:before{
+    padding: 0 20px;
+}
+/*分页*/
+.am-pagination{
+    text-align: center;
+}
+.am-pagination a{
+    color: black;
+}
+/*二维码*/
+.am-box-qrcode{
+    display: none;
+}
+/*end*/
+@media screen and (max-width: 650px) {
+    .am-box-qrcode{
+        display: block;
+    }
+    .am-box-container{
+        display: none;
+    }
+    .am-box-qrcode-img{
+        height: 13rem;
+    }
+}
+.contentDiv .am-thumbnail-caption{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    /*padding: 0;*/
+}
+.am-modal-dialog{
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    font-size:14px;
+    color:#545454;
+    overflow: hidden;
+
+}
+.am-modal .am-modal-hd{
+    padding:1rem 0 .6rem 1rem;
+    text-align: left;
+    font-size:14px;
+    background-color: #e0e0e0;
+    margin-bottom:22px;
+}
+#myIsExport .am-modal-hd{
+    padding: 2rem 1rem;
+    font-size: 15px;
+    background-color: #f6f6f6;
+    margin-bottom:0;
+}
+.am-modal-bd span{
+    line-height:30px;
+}
+
+.am-modal-prompt-input{
+    width: 66.66%;
+    height:26px;
+}
+.am-modal-bd{
+    padding:12px 20% 24px 30px;
+    background-color: #fff;
+}
+.am-modal-bd>div{
+    margin-bottom:10px;
+}
+.am-modal-bd button{
+    margin-top:8px;
+    font-size:12px;
+    color:#ff6d00;
+    border:0;
+    background-color: #fff;
+}
+.am-u-sm-3{
+    width: 25% !important;
+}
+.worning{
+    margin:8px auto;
+    font-size:12px;
+    color:red;
+}
+@media only screen and (min-width: 641px){
+    .am-modal-dialog {
+        width: 366px;
+    }
+
+}
+
+@media only screen and (max-width: 880px){
+
+    .helpimg{
+        display: none;
+    }
+    .helpimg1{
+        display: block;
+    }
+}
+
+/*<!--填写小程序信息，打包，下载-->*/
+.mask-protocol-xx {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: none;
+    font-family: SimSun, \\5B8B\4F53, Arial Narrow, monospace;
+}
+.mask-protocol-xx input[type=text]::-webkit-input-placeholder{
+    font: 400 13.3333px Arial;
+    padding-left: 5px;
+}
+.mask-protocol-xx input[type=text]::-moz-placeholder{
+    font: 400 13.3333px Arial;
+    padding-left: 5px;
+}
+.mask-protocol-xx input[type=text]:-moz-placeholder{
+    font: 400 13.3333px Arial;
+    padding-left: 5px;
+}
+.mask-protocol-xx input[type=text]:-ms-input-placeholder{
+    font: 400 13.3333px Arial;
+    padding-left: 5px;
+}
+.mask-protocol-content-xx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1000px;
+    height: 660px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+.mask-protocol-close-xx{
+    width: 1.5rem;
+    height: 1.5rem;
+    float: right;
+    margin: 1rem 1rem;
+    background-size: 100% 100%;
+    background: url("/home/assets/i/clones2.png") center;
+}
+.mask-protocol-title-xx{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 66px;
+    color: #000;
+    border-bottom: 2px solid #e0e0e0;
+}
+.mask-protocol-xx .mask-protocol-content-xx .guide{
+    font-size: 18px;
+    line-height: 80px;
+    /*font-family: SimSun;*/
+}
+.mask-protocol-xx .mask-protocol-content-xx .tip{
+    font-size: 14px;
+    line-height: 30px;
+    color: #ff4200;
+    margin: 0;
+    padding: 0;
+}
+.mask-protocol-xx .mask-protocol-content-xx .text{
+    font-size: 18px;
+    line-height: 30px;
+    margin: 30px auto;
+}
+
+.mask-protocol-xx .mask-protocol-content-xx .text1{margin-bottom: 10px}
+.mask-protocol-xx .mask-protocol-content-xx .text2{margin-top: 0}
+.mask-protocol-xx .mask-protocol-content-xx a{
+    color: #333333;
+    cursor: pointer;
+}
+.mask-protocol-xx .mask-protocol-content-xx .protext{
+    margin: 50px auto 10px;
+}
+.mask-protocol-xx .mask-protocol-content-xx .btn-group{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+    bottom: 100px;
+}
+.mask-protocol-xx .mask-protocol-content-xx .btn{
+    padding: 8px 0;
+    font-size: 16px;
+    width: 100px;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+.mask-protocol-xx .mask-protocol-content-xx .btn-group .btn2{
+    color: #fff;
+    background-color: #fd7a42;
+    width: 100px;
+    margin-left: 50px;
+}
+.mask-protocol-xx .mask-protocol-content-xx .loading{
+    height: 350px;
+    /*border: 1px solid red;*/
+}
+.mask-protocol-xx .mask-protocol-content-xx .psss{
+    line-height: 18px;
+    text-align: center;
+    font-size: 16px;
+}
+#inputBox2{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    bottom: 100px;
+}
+.download,#downBox{
+    width: 100%;
+    text-align: center;
+}
+.download .downloadImg{
+    width: 100px;
+    height: 100px;
+    margin: 130px auto 0 auto;
+}
+.download .downloadImg img{
+    width: 100%;
+    height: 100%;
+}
+.download .downloadBtn{
+    color: #fff;
+    background-color: #fd7a42;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    -webkit-appearance: button;
+    cursor: pointer;
+    outline: none;
+}
+
+/*动画*/
+.mask-protocol-xx .mask-protocol-content-xx .loading{
+    position: relative;
+}
+.mask-protocol-xx .mask-protocol-content-xx .csshub-circle-loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -32px;
+    margin-left: -32px;
+    display: block;
+    width: 64px;
+    height: 64px;
+    -webkit-transform-origin: 16px 16px;
+    transform-origin: 16px 16px;
+    animation: csshub-rotate-animation 5s infinite;
+    -webkit-animation: csshub-rotate-animation 5s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    /*border: 1px solid rebeccapurple;*/
+}
+.csshub-circle-loader .csshub-circle-blue{background-color: #1f4e5a}
+.csshub-circle-loader .csshub-circle-yellow{background-color: #ffb265}
+.csshub-circle-loader .csshub-circle-red{background-color: #ff5955}
+.csshub-circle-loader .csshub-circle-green{background-color: #00a691}
+
+.csshub-circle-loader .csshub-circle-line{
+    width: 64px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    -webkit-transform-origin: 4px 4px;
+    transform-origin: 4px 4px;
+    /*border:  1px solid red;*/
+}
+.csshub-circle-loader .csshub-circle-line:first-child{
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.csshub-circle-loader .csshub-circle-line:nth-child(2){
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.csshub-circle-loader .csshub-circle-line:nth-child(3){
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.csshub-circle-loader .csshub-circle{
+    -webkit-animation: move-animation 2.5s infinite;
+    animation: move-animation 2.5s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+
+.csshub-circle-loader .csshub-circle-line .csshub-circle:first-child{
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -4px;
+    border-radius: 4px;
+    -webkit-animation-delay: -.3s;
+    animation-delay: -.3s;
+}
+.csshub-circle-loader .csshub-circle-line .csshub-circle:nth-child(2){
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+    border-radius: 8px;
+    -webkit-animation-delay: -.6s;
+    animation-delay: -.6s;
+}
+.csshub-circle-loader .csshub-circle-line .csshub-circle:nth-child(3){
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    border-radius: 12px;
+    -webkit-animation-delay: -.9s;
+    animation-delay: -.9s;
+}
+
+@keyframes csshub-rotate-animation
+{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}
+@-moz-keyframes csshub-rotate-animation /* Firefox */
+{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}
+@-webkit-keyframes csshub-rotate-animation /* Safari 和 Chrome */
+{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}
+@-o-keyframes csshub-rotate-animation /* Opera */
+{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}
+
+@keyframes move-animation
+{
+    0%{left: 0}
+    40%{left: 72px}
+    100%{left:0}
+}
+@-moz-keyframes move-animation /* Firefox */
+{
+    0%{left: 0}
+    40%{left: 72px}
+    100%{left:0}
+}
+@-webkit-keyframes move-animation /* Safari 和 Chrome */
+{
+    0%{left: 0}
+    40%{left: 72px}
+    100%{left:0}
+}
+@-o-keyframes move-animation /* Opera */
+{
+    0%{left: 0}
+    40%{left: 72px}
+    100%{left:0}
+}
+
+.guides{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 99999;
+}
+.guides .guide-content{
+}
+.guides .guide-content .step1{
+    display: none;
+    position: fixed;
+}
+.guides .guide-content .step2{
+    display: none;
+    position: fixed;
+}
+.guides .step2 p{
+    padding: 10px;
+    position: fixed;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.guides .step2 p img{
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+}
+.guides .step1 .img1{
+    display: block;
+    border-radius: 10px;
+}
+.guides .step2 .step2-img{
+    position: relative;
+    top: 20px;
+    left: -300px;
+}
+.guides .step1 .img2{
+    position: relative;
+}
+.guides .step-close{
+    position: relative;
+    cursor: pointer;
+}
+.guides .jump-img{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+/**/

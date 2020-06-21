@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翼升科技咨询</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="成都翼升科技有限公司，翼升科技，翼升小程序，微信小程序开发，微信小程序制作，第三方小程序制作">
+    <meta name="description" content="翼升小程序为商户便捷高效自主生成小程序，并提供相应的营销模块。">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name=“robots” content=“noarchive”>
+    <meta name="renderer" content="webkit">
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <link rel="stylesheet" href="/home/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/home/assets/css/common.css"/>
+    <link rel="stylesheet" href="/home/assets/css/app.css"/>
+    <style>
+        .am-box-product-main{
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+        .am-box-product-banner{
+            height: 25rem;
+            margin-bottom: 4rem;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("/home/assets/i/exhibitionImg.png");
+        }
+        /*搜索框*/
+        .am-box-product-search{
+            height: 5rem;
+        }
+        .am-form-field{
+            border-radius: 5rem;
+            padding-left: 1rem;
+        }
+        .am-icon-search{
+            color: #ff6d00;
+        }
+        .am-btn{
+            border-radius: 5rem;
+            outline: none ;
+        }
+        /*导航列表*/
+        .am-breadcrumb li a{
+            color: black;
+            font-size: 1.2rem;
+        }
+        .am-breadcrumb>li+li:before{
+            font-size: 1.2rem;
+            content: "\00bb\00a0";
+            padding: 0 8px;
+            color: #ccc;
+        }
+        .am-breadcrumb{
+            margin-bottom: 0;
+        }
+        /*列表*/
+        .am-box-product-main-list{
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        .am-box-product-list-left{
+            height: 18rem;
+            border: 1px sandybrown solid;
+            background-color: #ffa25c;
+        }
+        .am-box-product-listHd{
+            text-align: center;
+            font-size: 7rem;
+            color: #ffffff;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        .am-box-product-listTime{
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-align: right;
+            margin-top: 0;
+            padding-right: 2rem;
+            clear: none;
+        }
+        .line{
+            background-color: #fff;
+            width: 3rem;
+            height: .1rem;
+            float: right;
+            margin: 0;
+            margin-right: 2rem;
+            clear: none;
+        }
+        .am-box-product-list-right{
+            height: 18rem;
+            background-color: #fff;
+        }
+        .am-box-product-list-right a{
+            height: 13.6rem;
+            display: block;
+            overflow: hidden;
+        }
+        #d01 .am-box-product-listright-hd{
+            font-size: 1.6rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin: 0;
+            color: #333;
+            padding: 1.8rem 1rem 0 3.6rem;
+        }
+        .am-box-product-listright-info{
+            padding: .8rem 0 0 3.6rem;
+            margin: 0;
+            height: 9.3rem;
+            color: #333;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+        .am-box-product-mainMore{
+            height: 4rem;
+            width: 12rem;
+            border: .1rem sandybrown solid;
+        }
+        .moreinfo{
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            line-height: 4rem;
+            color: #ffa25c !important;
+            text-align: center;
+        }
+        #d01 p{
+            margin: 0 0 1rem 0;
+        }
+        /*分页*/
+        .am-pagination{
+            text-align: center;
+        }
+        .am-pagination a{
+            color: black;
+        }
+        .footer-address{
+            width: 100%;
+            overflow: hidden;
+        }
+        .footer-address a{
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+        .footer-address a p{
+            float: left;
+        }
+        .footer-address a p:nth-last-child(1){
+            width: 70%;
+            margin-top: 0;
+        }
+        #d02,#d03{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- header -->
+<div id="myHeader"></div>
+<!-- /header -->
+
+
+<div class="am-box-product-main am-g">
+    <div class="am-box-product-banner am-u-log-12 am-u-md-12 am-u-sm-12">
+
+    </div>
+    <div class="am-box-product-center am-u-log-12 am-u-md-12 am-u-sm-12">
+        <div class="am-box-product-search am-u-sm-centered am-u-log-8 am-u-md-8">
+            <div class="am-u-lg-4 am-u-md-12 am-u-sm-12">
+                <div class="am-input-group am-u-md-12 am-u-sm-12">
+                    <input type="text" class="am-form-field" id="searchNews" placeholder="搜索">
+                    <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default" id="searchNewsBtn" type="button"><span class="am-icon-search"></span> </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="am-u-sm-centered am-u-log-8 am-u-md-8 am-u-sm-12">
+            <ol class="am-breadcrumb">
+                <li><a href="#">新闻资讯</a></li>
+                <li><a href="#">新闻列表</a></li>
+            </ol>
+        </div>
+        <div id="d01">
+        </div>
+        <!--<div class="am-box-pag am-u-sm-centered am-u-sm-8 am-u-md-8 am-u-lg-8">-->
+            <!--<ul data-am-widget="pagination" class="am-pagination am-pagination-default am-u-sm-centered am-u-sm-12 am-u-md-12 am-u-lg-12">-->
+                <!--<li class="am-pagination-prev ">-->
+                    <!--<a href="#"> 《 上一页 </a>-->
+                <!--</li>-->
+                <!--<li class="am-active" id="so1">-->
+                    <!--<a href="javascript:;" class="am-active">1</a>-->
+                <!--</li>-->
+                <!--<li class="" id="so2">-->
+                    <!--<a href="javascript:;" class="">2</a>-->
+                <!--</li>-->
+                <!--<li id="so3">-->
+                <!--<a href="javascript:;" class="" >3</a>-->
+                <!--</li>-->
+                <!--<li class="am-pagination-next" >-->
+                    <!--<a href="#" class="">下一页 》</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </div>
+</div>
+<!-- footer -->
+<div id="myFooter"></div>
+<!-- /footer -->
+<script src="/home/assets/js/jquery.min.js"></script>
+<script src="/home/assets/js/jquery.lazyload.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="/home/assets/js/footer.js"></script>
+<script>
+    $(function () {
+        getNewsList();
+    })
+    $('#searchNewsBtn').click(function () {
+       let title =  $('#searchNews').val();
+        getNewsList(title);
+    });
+    $('#so2').click(function () {
+        $(this).parent().children('li').children('a').removeClass('am-active')
+        $(this).parent().children('li').removeClass('am-active')
+        $(this).addClass('am-active')
+        $(this).children('a').addClass('am-active')
+        $('#d01').hide()
+        $('#d03').hide()
+        $('#d02').show()
+    })
+    $('#so1').click(function () {
+        $(this).parent().children('li').children('a').removeClass('am-active')
+        $(this).parent().children('li').removeClass('am-active')
+        $(this).addClass('am-active')
+        $(this).children('a').addClass('am-active')
+        $('#d01').hide()
+        $('#d02').hide()
+        $('#d01').show()
+    })
+    $('#so3').click(function () {
+        $(this).parent().children('li').children('a').removeClass('am-active')
+        $(this).parent().children('li').removeClass('am-active')
+        $(this).addClass('am-active')
+        $(this).children('a').addClass('am-active')
+        $('#d01').hide()
+        $('#d02').hide()
+        $('#d03').show()
+    })
+    //获取新闻列表
+    function getNewsList(title) {
+        let sdata = title ? {'title':title} : {};
+        $('#d01').empty();
+        $.ajax({
+            type:'post',
+            url:'/home/article_list/index',
+            data:sdata,
+            dataType:'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success(res){
+                if(res.status == 200){
+                    let data = res.data;
+                    for(let i in data){
+                        let ctime = data[i].create_date;
+                        let day = ctime.substring(10,8);
+                        let day2 = ctime.substring(7,6);
+                        console.log(day,day2)
+                        let time = ctime.substring(0,7);
+                        $('#d01').append('' +
+                            '<div class="am-box-product-main-list am-u-sm-centered am-u-log-8 am-u-md-8">'+
+                                '<div class="am-box-product-list-left am-u-log-2 am-u-md-2 am-u-sm-12">'+
+                                    '<p class="am-box-product-listHd">'+day +'</p>'+
+                                    '<p class="am-box-product-listTime">'+time +'</p>'+
+                                    '<p class="line"></p>'+
+                                    '<p class="am-box-product-listTime fr" >'+data[i].type_name+'</p>'+
+                                '</div>'+
+                                '<div class="am-box-product-list-right am-u-log-10 am-u-md-10 am-u-sm-12">'+
+                                    '<a href="news/journalism.html?id='+ data[i].industry_id+'">'+
+                                        '<p class="am-box-product-listright-hd">'+data[i].title+'</p>'+
+                                        '<div class="am-box-product-listright-info am-u-lg-12 am-u-sm-12">'+data[i].description+'</div>'+
+                                    '</a>'+
+                                    '<div class="am-box-product-mainMore am-u-lg-3 am-u-sm-offset-9 am-u-md-12 am-u-sm-12">'+
+                                        '<a href="news/journalism.html?id='+ data[i].industry_id+'" class="moreinfo ">更多详情  >></a>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>')
+                    }
+                }else{
+                    alert(res.message)
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

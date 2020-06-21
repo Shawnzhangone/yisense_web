@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子账号登录</title>
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <link rel="stylesheet"  href="/static/css/com.css">
+    <link rel="stylesheet" href="./assets/css/amazeui.min.css"/>
+    <style>
+        .codeInput{
+            height: 35px;
+            overflow: hidden;
+            width: 249px !important;
+        }
+        .formInput{
+            position: relative;
+        }
+        .formInput input{
+            font-size: 16px;
+        }
+        .codes{
+            height: 35px;
+            width: 159px!important;
+            padding-left: 5px;
+            outline: none;
+            float: left;
+            border: 1px solid #CAC7C7;
+            box-sizing: border-box;
+        }
+        .loginFrom{
+            width: 100%;
+        }
+        .info,.info2{
+            width: 150px;
+            height: auto;
+            margin-right: 30px;
+            position: absolute;
+            top:6px;
+            right: 0;
+        }
+        .info2{
+            margin-top: 55px;
+        }
+        .info p,.info2 p{
+            padding: 0;
+            font-size: 14px;
+            color: red;
+            text-align: left;
+        }
+        .codes::-webkit-input-placeholder{
+            font-size: 12px;
+        }
+        .loginMain .mask{
+            width: 500px;
+            height: 500px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 9999;
+            display: none;
+            background-color: #fff;
+        }
+        #wechat_code{
+            width: 300px;
+            height: 400px;
+            margin: auto;
+        }
+        .loginMain .back_login{
+            color:#4786f3;
+            font-size: 15px;
+            padding:20px;
+        }
+        #choose-program .am-modal-dialog{
+            width: 70%;
+            height: 600px;
+        }
+        #choose-program .am-modal-bd{
+            height: 540px;
+        }
+        .am-modal-hd{
+            text-align: left;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<div class="loginComponent">
+    <div class="loginMain">
+        <p>子账号登录</p>
+        <div action="" class="loginFrom">
+            <div class="formInput">
+                <i class="mobile"></i>
+                <input type="text" placeholder="输入账号"  name="mob" id="mob">
+            </div>
+            <div class="info">
+                <p id="msg"></p>
+            </div>
+            <div class="formInput">
+                <i class="password"></i>
+                <input type="password" placeholder="密码" name="passwd" id="passwd">
+            </div>
+            <div class="info2">
+                <p id="msg2"></p>
+            </div>
+            <div class="codeInput formInput" style="display: none;">
+                <input type="text" class="codes"  placeholder="请输入验证码">
+                <img class="codeInputImg" src="" width="90" height="35">
+            </div>
+            <div class="isErro"></div>
+            <a href="javascript:;" class="loginSub">登录</a>
+        </div>
+        <div class="thirdPartyLogin">
+            <a href="javascript:;"><img class="wechat pointer" src="/static/image/login/wechat.svg"></a>
+        </div>
+        <div class="mask">
+            <div id="wechat_code"></div>
+
+            <a href="javascript:;"><p class="back_login">返回账号登录</p></a>
+        </div>
+    </div>
+    <div class="am-modal am-modal-prompt" tabindex="-1" id="choose-program">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">选择小程序进入管理后台</div>
+            <div class="am-modal-bd" style="overflow: auto">
+                <ul class="am-avg-sm-2 am-avg-md-4 am-avg-lg-5 am-thumbnails mypr" id="ProList">
+                </ul>
+            </div>
+            <div class="am-modal-footer" style="display: none">
+                <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='backHome'>
+    <a href='/home/index.html' class='backHomea backHome'></a>
+</div>
+</div>
+</body>
+
+<script src="/home/assets/js/jquery.min.js"></script>
+<script src="/home/assets/js/footer.js"></script>
+
+<script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script>
+
+    $('#mob').blur(function () {
+        var mob = $(this).val()
+        if(mob === ''){
+            $('#msg').html('*账号不能为空')
+            return
+        }else{
+            $('#msg').html()
+        }
+    })
+    $('#passwd').blur(function () {
+        var mobpsw = $(this).val();
+        if(mobpsw === ''){
+            $('#msg2').html('*密码不能为空')
+        }else
+            $('#msg2').html('')
+    })
+    //验证码
+    $.ajax({
+        type:'POST',
+        url:'/home/login/checkLoginErrorCount',
+        data:'',
+        dataType:'json',
+        success:function (data) {
+            if(data.status === 400){
+                isLoginThree = true
+                $('.codeInput').show()
+                getCaptcha();
+            }
+        }
+    });
+    function getCaptcha(){
+        $.ajax({
+            type:'POST',
+            url:'/home/login/getCaptcha',
+            data:'',
+            dataType:'json',
+            success:function (data) {
+                $(".codeInputImg").attr("src",data.data.file_path)
+            }
+        });
+    }
+    $(".codeInputImg").click(function () {
+        getCaptcha();
+    });
+    $('.loginSub').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '/backend/login/LoginSubAccount',
+                data: {account: $('#mob').val(), password: $('#passwd').val(),captcha:$('.codes').val()},
+                dataType: 'json',
+                success: function (data) {
+                    // console.log(data);
+                    if (data.status == 200) {
+                        //成功
+                        // getProList();
+                        $('#ProList').children().remove()
+                        for (var i = 0; i < data.data.length; i++) {
+                            $("#ProList").append("<li onclick='chooseprogram.call(this)' data-pid='" + data.data[i].program_code + "'>" +
+                                "<div class='li-con'><img class='am-thumbnail' src='/home/assets/i/mypr1.png' />" +
+                                "<div class='name'><h2>" + data.data[i].name + "</h2><p>" + data.data[i].create_date + "</p>" +
+                                "</div>" +
+                                "</div></li>");
+                        }
+                        $('#choose-program').modal({
+                                relatedTarget: this,
+                                // closeOnConfirm: false,
+                                onConfirm: function (e) {
+
+                                }})
+                        $('.am-dimmer').remove()
+                    } else if(data.status == 400){
+                        if(data.message == 'passwd参数不能为空'){
+                            alert('密码不能为空')
+                        }else{
+                            alert(data.message);
+                        }
+                    }else if(data.status == 801){
+                        isLoginThree = true
+                        alert(data.message);
+                        $('.codeInput').show()
+                    }
+                }
+            });
+    });
+    $(".wechat").click(function () {
+        $(".mask").show();
+        var hostname = window.location.hostname, appid
+        if(hostname === 'mps.essocial.win'){
+            appid = 'wx8bfcb15e98b0a22c'
+        }else if(hostname === 'mps.essocial.com.cn'){
+            appid = 'wx755ee3c39112a6b1'
+        }
+        var obj = new WxLogin({
+            id:"wechat_code",
+            appid: appid,
+            scope: "snsapi_login",
+            redirect_uri: BASE_URL + '/home/loginMini.html',
+            state: "",
+            style: "black",
+            href: ""
+        });
+    });
+    $(".back_login").click(function () {
+        $(".mask").hide();
+    });
+    function getProList() {
+        $.ajax({
+            type: 'POST',
+            url: '/backend/sub_program/getProgramList',
+            data: null,
+            dataType: 'json',
+            // xhrFields: {
+            //     withCredentials: true
+            // },
+            success: function (data) {
+                if (data.status == 200) {
+                    for (var i = 0; i < data.data.length; i++) {
+                        $("#ProList").appendChild("<li onclick='chooseprogram.call(this)' data-pid='" + data.data[i].program_code + "'>" +
+                            "<div class='li-con'><img class='am-thumbnail' src='/home/assets/i/mypr1.png' />" +
+                            "<div class='name'><h2>" + data.data[i].name + "</h2><p>" + data.data[i].create_date + "</p>" +
+                            "</div>" +
+                            "</div></li>");
+                    }
+                } else{
+                    alert(data.message)
+                    window.location.href = data.url;
+                }
+            }
+        });
+    }
+    $(function () {
+        let code
+        let url = window.location.href.split('?')
+        if(url.length > 1){
+            url.forEach(val => {
+                val.split('&').forEach(va => {
+                    if (va.split('=')[0] === 'code') {
+                        code = va.split('=')[1]
+                    }
+                })
+            })
+        }
+        if(code){
+            window.history.pushState({}, 0, url[0])
+            $.ajax({
+                url:'/backend/login/LoginSubWechat',
+                method: 'get',
+                data:{code},
+                success:function (res) {
+                    if (res.status == 200) {
+                        //成功
+                        // getProList();
+                        $('#ProList').children().remove()
+                        for (var i = 0; i < res.data.length; i++) {
+                            $("#ProList").append("<li onclick='chooseprogram.call(this)' data-pid='" + res.data[i].program_code + "'>" +
+                                "<div class='li-con'><img class='am-thumbnail' src='/home/assets/i/mypr1.png' />" +
+                                "<div class='name'><h2>" + res.data[i].name + "</h2><p>" + res.data[i].create_date + "</p>" +
+                                "</div>" +
+                                "</div></li>");
+                        }
+                        $('#choose-program').modal({
+                            relatedTarget: this,
+                            // closeOnConfirm: false,
+                            onConfirm: function (e) {
+
+                            }})
+                        $('.am-dimmer').remove()
+                    }
+                }
+            })
+        }
+    })
+    function chooseprogram(){
+        $.ajax({
+            type: 'POST',
+            url: '/backend/sub_program/chooseProgram',
+            data: {program_code: $(this).data("pid")},
+            dataType: 'json',
+            // xhrFields: {
+            //     withCredentials: true
+            // },
+            success: function (data) {
+                if (data.status == 200) {
+                    window.location.href = "/cms/";
+                } else{
+                    alert(data.message)
+                    window.location.href = data.url;
+                }
+            }
+        });
+    }
+
+</script>
+</html>

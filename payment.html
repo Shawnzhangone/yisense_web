@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提交订单-翼升科技</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <!--<meta http-equiv="Cache-Control" content="no-siteapp"/>-->
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <link rel="stylesheet" href="/home/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/home/assets/css/common.css"/>
+    <link rel="stylesheet" href="/home/assets/css/pay.css"/>
+</head>
+<body>
+<!-- header -->
+<div id="myHeader"></div>
+<!-- /header -->
+
+<div class="am-g payment">
+    <div class="am-u-sm-8 am-u-md-12 am-u-lg-8 am-u-sm-centered">
+        <h1 class="payment-title">订单信息</h1>
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 payment-main">
+            <form class="am-form  am-u-sm-centered">
+                <div class="payment-list">
+                    <label>用户名：</label><span id="uname"></span>
+                </div>
+                <div class="payment-list">
+                    <label>公司名称：</label>
+                    <input type="text" placeholder="" class="inputs" id="company_order">
+                </div>
+                <div class="payment-list">
+                    <label>联系人：</label>
+                    <input type="text" placeholder="" class="inputs" id="name_order">
+                </div>
+                <div class="payment-list">
+                    <label>联系电话：</label>
+                    <input type="text" placeholder="" class="inputs" value="" id="phone_order">
+                </div>
+                <div class="payment-list">
+                    <label>联系邮箱：</label>
+                    <input type="text" placeholder="" class="inputs" id="email_order">
+                </div>
+                <div class="payment-list-type">
+                    <label>版本类型：</label>
+                    <ul class="payment-ul">
+                        <li data-version="1" data_money="4800" >高级版4800元/年</li>
+                        <li data-version="2" data_money="12800">旗舰版12800/年</li>
+                    </ul>
+                </div>
+                <div class="payment-list-type" style="height: 6rem">
+                    <label>版本年限：</label>
+                    <ul class="payment-list-yers" style="height: 3rem">
+                        <li class="add" id="addYear"><input type="button" value="-"></li>
+                        <li class="import"><input id="buyYear" type="number" min="12" value="1"></li>
+                        <li class="reduce" id="reduceYear"><input type="button" value="+"></li>
+                    </ul>
+                    <p style="clear: none"></p>
+                    <!--<p style="margin: 0;height: 3rem;clear: none;font-size: 14px;padding-left: 6.2rem;color: #919090">开始时间：<span>2018-9-19 14：33:33</span></p>-->
+                    <!--<p style="margin: 0;height: 3rem;clear: none;font-size: 14px;padding-left: 6.2rem;color: #919090">结束时间：<span>2018-9-19 14：33:33</span></p>-->
+                </div>
+            </form>
+        </div>
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 payment-footer">
+            <div class="am-u-sm-8 am-u-md-8 am-u-lg-8">
+                <span class="payment-pic">合计：4800.00元</span>
+                <input type="checkbox" class="mask-info-checkbox" style="margin-left: 3rem">
+                <a href="#" class="payword" style="font-size: 12px;color: #666">同意《用户功能订购协议》
+                </a>
+            </div>
+            <div class="am-u-sm-4 am-u-md-4 am-u-lg-4">
+                <input type="button" value="提交订单" class="onsumit" id="onsuborder">
+            </div>
+        </div>
+    </div>
+</div>
+<!--用户协议-->
+<div class="mask-protocol">
+    <div class="mask-protocol-content">
+        <div class="mask-protocol-close protocol"></div>
+        <p class="mask-protocol-title">翼升小程序功能订购协议</p>
+        <div class="mask-info">
+            <p class="mask-info-title">一、接受条款</p>
+            1.1
+            欢迎您使用翼升小程序功能。以下所述条款和条件即构成您与翼升科技就使用翼升小程序功能所达成的协议（下称“本协议”）。您确认本协议，即表示您已接受了以下所述的条款和条件。如果您不同意接受全部的条款和条件，那么您将无权使用翼升小程序功能，您可以退出翼升小程序功能的在线申请流程。无论您是否点击确认本协议或是否完成在线申请流程，一旦您使用了翼升小程序功能（无论收费版本功能或者免费版本功能），即表示您已接受了以下所述的条款和条件，同意受本协议约束，本协议包括但不限于下述的条款和条件、翼升小程序功能的相关规则和通知、翼升科技官网（https://mps.essocial.com.cn，下同）上公布的所有商家协议条款和对开通翼升小程序功能的商家适用的规则、翼升科技向商家公布或通知的相关规则和提示等。<br>
+            1.2
+            翼升科技有权随时修改本协议的条款和条件，并只需公示于网站或通知您，而无需征得您的事先同意。修改后的条款应于公示或通知时即时生效。在翼升科技修改本协议后，您继续使用翼升小程序功能应被视作您已接受了修改后的条款。除非得到翼升科技的书面授权，否则任何人将不得修改本协议。
+            <p class="mask-info-title">二、定义</p>
+            2.1 商家（以下或称为“用户”、“您”）：指在翼升平台、产品、系统等注册成功，并在翼升平台上或使用翼升产品开设店铺、销售商品、提供服务等的公司、个人、个体工商户。<br>
+            2.2 翼升小程序功能（以下或称“小程序功能”）：指由翼升科技向商家提供的、在翼升小程序系统可申请开通、使用的实现小程序创建、生成乃至上线的全部功能，以及翼升科技开发的一切与小程序营销相关的功能。<br>
+            2.3
+            翼升小程序功能使用费（以下简称为“使用费”）：指商家购买和（或）使用翼升小程序某些特定的收费功能时，需向翼升科技支付的费用。除非与翼升科技另有书面约定，使用费必须先行支付，即商家在申请开通相关收费功能时需先行支付使用费，翼升科技再行开通相关功能。
+            <p class="mask-info-title">三、开通翼升小程序功能的对象</p>
+            除非与翼升科技另有书面约定，开通翼升小程序功能需同时符合下述条件：<br>
+            3.1 您必须已经成功注册成为翼升小程序用户；<br>
+            3.2 您在申请开通和使用翼升小程序功能时均签署了翼升小程序服务协议；<br>
+            3.3 当您使用收费版本的功能时，您同意并已支付使用相关小程序功能的使用费；<br>
+            3.4 满足翼升科技认为需要具备的其它条件。<br>
+            您了解并同意，您对上述如有任何的不符，翼升科技保留拒绝或随时终止您使用翼升小程序功能的权利。并有权根据业务发展的需要对上述条件进行调整，调整后只需公示于网站或通知您，而无需征得您的事先同意。修改后的条款应于公示或通知时即时生效。
+            <p class="mask-info-title">四、翼升小程序功能的开通、支付、中止和终止</p>
+
+            4.1 翼升科技将于您同意本协议并按本协议约定支付使用费以后，为您开通您所购买的单个或多个小程序功能。小程序功能一经开通，您即可开始使用您所购买的单个或多个小程序功能。<br>
+            4.2 支付使用费实行在线支付。您在点击同意本协议后，将跳转至支付页面，可选择支付宝支付、微信支付、银行储蓄卡支付三种支付方式支付使用费。<br>
+            4.3 您首次开通翼升小程序功能并订购支付成功后，您可在官网个人中心-交易明细中查看支付记录。<br>
+            4.4 您购买单个、多个翼升小程序功能或购买翼升科技增值服务（包含但不限于账号升级、功能服务、内容素材、使用权限、营销指导等），因您主观原因（包含但不限于不愿继续持有、非翼升科技产品或服务问题等）产生的退款行为，翼升科技有权不进行受理。<br>
+            4.5 您同意您购买的小程序功能可能于下述任一情形下中止和（或）终止，且翼升科技有权单方终止本协议：<br>
+            (a)您购买的小程序功能使用期到期，且未支付使用费继续使用的；<br>
+            (b)您不再符合使用小程序功能的条件；<br>
+            (c)您主动向翼升科技申请停止使用小程序功能；<br>
+            (d)您违反了翼升科技的任何协议或规则，被翼升科技清退；<br>
+            (e)翼升科技按本协议其他条款中止或停止向您提供小程序功能；<br>
+            (f)其它翼升科技认为需终止服务的情况。
+            无论本协议因何原因中止或终止，在协议中止或终止前的行为所导致的任何赔偿和责任，您必须完全且独立地承担责任，且非因翼升科技过错致本协议终止的，翼升科技均有权不予退还您已支付的使用费。
+            <p class="mask-info-title">五、商家的义务</p>
+
+            5.1 您向翼升科技提交的注册信息在本协议有效期内发生任何变更，您应在该信息变更之日起的七个工作日内书面通知翼升科技，并将最新信息一并提交给翼升科技。由于您未能按时通知带来的一切不利后果应由您自行承担。<br>
+            5.2 您在此声明、保证并同意：<br>
+            (a) 您使用小程序功能进行销售的商品应符合本协议及翼升科技相关规则、国家法律法规的规定，不得销售违禁品等违反法律法规、或是国家明令禁止销售的商品、或是翼升科技禁止销售的商品。<br>
+            (b)您使用小程序功能进行销售的商品，其商品详情应真实、详细、完整并与商品实际情况一致，无任何夸张、夸大或可能引人误解的陈述或虚假信息。<br>
+            (c)您有合法资格销售在翼升科技上所发布的信息所对应的产品，且发布的产品信息符合翼升科技的要求，产品来源合法，质量符合国家相关规定，非为假冒伪劣产品，并不侵犯任何第三人的任何权利。<br>
+            (d)如果您提供的信息/产品不合法、不真实、不准确、不及时或不完整，或有第三人对您提起投诉，或翼升科技有合理的理由怀疑其真实性，准确性、及时性和完整性（包括但不限于涉嫌本协议第五条第5.3款的情形、违反本协议及相关规则的情形），则翼升有权要求您提供相关证明文件、停止您使用小程序功能，且不予退还您已支付的使用费。<br>
+            5.3 您在此声明并保证您使用小程序功能销售的商品、商品名称、信息不包含以下任一内容：<br>
+            (a) 涉嫌欺诈、涉嫌提供虚假信息、涉嫌销售或试图销售假冒伪劣及盗窃的物品以及其它法律法规限制或禁止销售及推广的物品。<br>
+            (b) 涉嫌侵犯或教唆他人侵犯第三方的版权，专利，商业秘密或其它合法权利，或涉嫌不正当竞争。<br>
+            (c) 涉嫌违反相关法律，法规，规章或决定(包括但不限于国家出口限制，消费者保护，不正当竞争和歧视或虚假广告)。<br>
+            (d)涉嫌含有侮辱、诽谤，恐吓或非法骚扰等内容。<br>
+            (e)涉嫌含有淫秽，或包含任何色情内容。<br>
+            (f)涉嫌含有种族，性别，地区，民族，生理残疾等歧视性或倾向性内容。<br>
+            (g)涉嫌含有蓄意毁坏、恶意干扰、秘密地截取或侵占任何系统、数据或个人资料的任何病毒、伪装破坏程序、电脑蠕虫、定时程序炸弹或其他电脑程序 。<br>
+            (h)其它涉嫌违反翼升科技相关协议、规则的产品、信息。<br>
+            5.4
+            您对使用小程序功能的效果应有合理预估，翼升科技不对您使用小程序功能后的访问量、产品销量、经营业绩、投资收益等作任何明示或暗示的承诺，与后台预测数据相关的（包括信赖这些预测行事而产生的）任何后果、责任、风险，翼升科技均不承担任何法律责任。<br>
+            5.5 您应自行对您发布的商品、商品名称、信息、服务等以及对通过小程序功能进行的营销活动所引起的一切法律纠纷承担全部责任。<br>
+            5.6
+            您使用小程序功能应当符合本协议及其他使用规范的要求，并保证不违反中华人民共和国法律法规以及对您具有法律约束力的其他任何文件，也不构成对任何第三人任何形式的侵权，保证翼升科技不会因向其提供小程序功能而构成违法、违约或者对任何第三人的侵权，保证使用小程序功能不具有任何恶意，如不恶意竞价等。<br>
+            5.7 您同意，对任何由翼升科技免费提供或作为促销手段赠送的其他软件、服务或服务期，翼升科技保留随时调整、变更及撤销的权利。<br>
+            5.8 如您违反本协议规定的任何条款，翼升科技有权拒绝为您开通小程序功能、随时中止或终止本协议，并不予退还您已支付的使用费，同时翼升科技有进一步追究您法律责任的权利。<br>
+            5.9
+            您因同意或履行本协议，或因使用小程序功能而获得的有关翼升科技的任何信息，包括但不限于有关技术、财务、市场、管理等方面的科学、商业、数据或内部信息、均为翼升科技的保密信息，应为翼升科技的专有财产。您在此承诺对翼升科技的保密信息严格保密，不得使用或允许他人使用，亦不得向任何第三方披露。本款下的保密义务不因本协议的中止或终止而终止。<br>
+            <p class="mask-info-title">六、诚信经营和第三方投诉处理</p>
+            6.1
+            您承诺，将恪守诚信经营原则，在使用小程序功能时，如您有下列情形之一的，您同意翼升科技有权不经通知您即立即单方停止您的小程序功能，不予退还您已支付的使用费，且无需承担任何违约责任，翼升科技并有权对此在翼升小程序官网进行公示：<br>
+            (a) 涉嫌利用小程序功能实施欺诈或其他违法行为的（翼升有权单方对此作出认定）；<br>
+            (b) 被任何第三方投诉，称其有收款不发货或所发货物与约定严重不符等恶意或严重违约行为，或称其有生产或销售假冒伪劣产品或侵犯第三方合法权利的行为；<br>
+            (c) 未经翼升科技书面同意，擅自许可他人使用小程序功能或擅自将小程序功能转让或部分转让他人的（包括但不限于擅自许可他人使用其帐号和密码，或擅自将其帐号和密码转让或泄露给他人的）；<br>
+            (d) 利用小程序功能或计算机病毒/程序等手段，非法窃取、删除、修改或增加翼升科技或翼升小程序其他商家的任何信息，或以其他任何方式危害翼升科技任何产品的正常运行的；<br>
+            (e) 违反其他约定或网站规则的。<br>
+            6.2 如因上述造成翼升科技损失的（包括但不限于依法必须支付给第三方的赔偿款、诉讼费、律师费、公证费等），均由您承担。<br>
+            <p class="mask-info-title">七、翼升科技的责任限制和免责</p>
+            7.1 翼升科技在此明确声明对翼升小程序功能不作任何明示或暗示的保证，包括但不限于对服务的可适用性、没有错误或疏漏、持续性、准确性、可靠性、适用于某一特定用途之类的保证、声明或承诺。<br>
+            7.2 翼升科技对用户的任何通知，不论是口头还是书面的，均不表示翼升科技做出在本协议陈述以外的任何担保责任。<br>
+            7.3 对下列情形，翼升科技不承担任何责任：<br>
+            (a)并非由于翼升科技的故意或过失而导致翼升小程序功能未能提供的；<br>
+            (b)由于您的故意或过失导致您及/或任何第三方遭受损失的；<br>
+            (c)您违反本协议，或违反翼升科技的其它协议、合同、约定、及/或规则；<br>
+            (d)因不可抗力导致翼升科技不能履行其义务的。<br>
+            <p class="mask-info-title">八、知识产权</p>
+            8.1 翼升科技是翼升小程序所有权利的拥有者。翼升小程序包含商业秘密和全世界范围内的版权和其它知识产权。<br>
+            8.2 翼升，翼升科技， mps.essocial.com.cn以及相关的标识和徵记是翼升科技在中国和其它国家的商标并受到版权法、商标法和其它知识产权法的保护。未经授权地复制、模仿、使用或发布上述标识均被禁止。<br>
+            8.3 在提及知识产权时，“翼升科技”同时包括了成都翼升科技有限公司及其分公司、子公司或其关联公司。
+            <p class="mask-info-title">九、协议的修改和解释</p>
+
+            9.1
+            翼升科技有权随时根据中华人民共和国有关法律、法规的变化、互联网的发展以及公司经营状况和经营策略的调整等情况修改本协议、新增或取消部分或全部翼升小程序功能等，此种情况下，翼升科技会通知您，您有必要对最新的协议条款和服务规则等进行仔细阅读和重新确认，当发生有关争议时，以最新的协议条款和服务规则为准。如果您不同意所改动的内容，您应不再申请或使用翼升小程序功能。<br>
+            9.2 您同意，鉴于互联网相关技术、业务模式等发展迅速：翼升科技有权根据需要不时地制定、修改本协议及/或各类规则，如有任何变更，翼升科技将通过翼升小程序官网通知您。
+            经修订的协议及/或规则一经公布，立即自动生效，亦成为本协议的一部分。<br>
+            9.3 如发生协议条款与中华人民共和国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它条款则依旧对用户有约束力。<br>
+            <p class="mask-info-title"> 十、其他</p>
+            10.1 本协议取代双方就有关本协议所载任何事项于先前以口头及书面达成的共识。<br>
+            10.2 本协议将受中国法律约束，并受当地法院管辖。<br>
+            10.3 如本协议的任何条款被视作无效或无法执行，则上述条款可被分离，其余部份则仍具有法律效力。<br>
+            10.4 本协议的标题仅为方便阅读所设，非对条款的定义、限制、解释或描述其范围或界限。<br>
+            10.5 翼升科技于您过失或违约时放弃本协议规定的权利的，不得视为其对您的其他或以后同类之过失或违约行为弃权。<br>
+            10.6 您承诺，您注册使用翼升科技提供的产品或服务，即表示您同意本协议的所有内容。<br>
+        </div>
+        <div class="mask-info-footer">
+            <input type="checkbox" class="mask-info-checkbox"><span>《用户功能订购协议》</span>
+        </div>
+    </div>
+</div>
+<!--用户协议-->
+
+<!-- footer -->
+<div id="myFooter"></div>
+<!-- /footer -->
+<script src="/home/assets/js/jquery.min.js"></script>
+<script src="/home/assets/js/jquery.lazyload.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="/home/assets/js/footer.js"></script>
+<script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+//    var user_id = '';
+    $(function () {
+        $.ajax({
+            type:"post",
+            url:"/home/order_form/orderdetails",
+            data:null,
+            dataType:'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success:function (res) {
+                if(res.status == 200){
+                var data = res.data;
+//                user_id = data.user_id;
+                $("#company_order").val(data.company);
+                $("#name_order").val(data.nickname);
+                $("#phone_order").val(data.mobile);
+                $("#uname").html(data.nickname);
+                $("#email_order").val(data.email);
+                console.log(data)
+                }else if(res.status == 400){
+                    alert(res.message)
+                    window.location.href = '/home/login';
+                }else{
+                    alert(res.message)
+                }
+            }
+        })
+    });
+    var version = null;
+    var money = 4800;
+    $(".payword").click(function () {
+        $('.mask-protocol').show();
+    });
+    $(".mask-protocol-close").click(function () {
+        $('.mask-protocol').hide();
+    })
+    $('.payment-ul li').click(function () {
+        $(this).parent().children('li').removeClass('bgImgs')
+        $(this).toggleClass('bgImgs')
+        version = $(this).data("version");
+        computeMoney();
+    });
+    $("#reduceYear").click(function () {
+        var i = $("#buyYear").val()
+        i++;
+       $("#buyYear").val(i);
+        computeMoney();
+    })
+    $("#addYear").click(function () {
+        console.log("112")
+        var i = $("#buyYear").val()
+        if(i <= 0){
+            i = 0;
+        }else {
+            i -- ;
+        }
+        $("#buyYear").val(i);
+        computeMoney();
+    });
+    function computeMoney(){
+        money = $('.bgImgs').attr('data_money') * $("#buyYear").val();
+        $('.payment-pic').html("合计："+money+".00元")
+    }
+    $("#onsuborder").click(function () { //提交订单
+        var reg = /^1[3-9][0-9]{9}$/;
+
+        var company = $("#company_order").val();
+        var name = $("#name_order").val();
+        var phone = $("#phone_order").val();
+        var email = $("#email_order").val();
+        var year = $("#buyYear").val();
+        var flag = reg.test(phone);
+        console.log(company,name,phone,email,year,version,money)
+        if(name == ''){
+            alert('请填写姓名')
+        }else if(flag === false){
+            alert('请填写正确的手机号')
+        }else if(email == ''){
+            alert('请填写邮箱')
+        }else if(year <= 0){
+            alert('请选择年限')
+        }else if(version == null){
+            alert('请选择版本')
+        }else if(! $('.mask-info-checkbox').is(':checked')){
+            alert("请同意用户支付协议")
+        }else{
+            var sdata = {"company":company,"nickname":name,"mobile":phone,"email":email,"edition":version,"term":year,"money":money}
+            console.log(sdata)
+            $.ajax({
+                type:"post",
+                url:"/home/order_form/ordercreation",
+                data:sdata,
+                dataType:'json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                success:function (res) {
+                    var onum = res.data
+                    window.location.href = '/home/paypage.html?num='+ onum
+                }
+            })
+        }
+    })
+    $(".mask-info-checkbox").click(function () {
+        if (!this.checked){
+            $('.mask-info-checkbox').attr('checked',false)
+        }else{
+            $('.mask-info-checkbox').attr('checked',true)
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>成都翼升科技有限公司</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="成都翼升科技有限公司，翼升科技，翼升小程序，微信小程序开发，微信小程序制作，第三方小程序制作">
+    <meta name="description" content="翼升小程序为商户便捷高效自主生成小程序，并提供相应的营销模块。">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="baidu-site-verification" content="JQrD6JTb0R" />
+    <meta name=“robots” content=“noarchive”>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit">
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <link rel="stylesheet" href="/home/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/home/assets/css/app.css"/>
+    <link rel="stylesheet" href="/home/assets/css/common.css"/>
+    <style>
+        .am-modal-dialog{
+            border-radius: 10px;
+        }
+        .am-modal-bd{
+            text-align: left;
+            padding: 15px 30px;
+        }
+        .am-modal-bd>div{
+            margin-top: 10px;
+        }
+        .am-modal-bd textarea{
+            width: 350px;
+        }
+        #btn111{
+            padding: .2rem;
+            border-radius: 5px;
+        }
+        .des{
+            font-size: 12px;
+        }
+        .am-modal-hd{
+            font-size: 18px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        (function () {
+
+            //地址重定向
+            var url = location.href;
+            if ( (url.indexOf('mps.essocial.com.cn') != -1) && navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i) ) {
+                var newUrl = '';
+                if(url.indexOf('mps.essocial.com.cn/home') != -1){
+                    newUrl = url.replace('https://mps.essocial.com.cn/home', 'https://mps.essocial.com.cn/mobile');
+                }else{
+                    newUrl = url.replace('https://mps.essocial.com.cn', 'https://mps.essocial.com.cn/mobile');
+                }
+                location.href = newUrl;
+            }
+        })();
+    </script>
+</head>
+<body>
+<!-- header -->
+<div id="myHeader"></div>
+<!-- /header -->
+
+<div data-am-flexslider class="am-slider am-slider-default am-slider-manual" data-am-slider='{"controlNav":true}'>
+    <ul class="am-slides" style="height: 400px">
+        <!--<li>-->
+            <!--<img class="full" src="/home/assets/i/banner1.png" ondragstart="return false;">-->
+            <!--<img class="smScreen" src="/home/assets/i/banner1-sm.png" ondragstart="return false;">-->
+
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img class="full" src="/home/assets/i/banner2.png" ondragstart="return false;">-->
+            <!--<img class="smScreen" src="/home/assets/i/banner2-sm.png" ondragstart="return false;">-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img class="full" src="/home/assets/i/banner3.png" ondragstart="return false;">-->
+            <!--<img class="smScreen" src="/home/assets/i/banner3-sm.png" ondragstart="return false;">-->
+        <!--</li>-->
+    </ul>
+</div>
+
+<div class="get">
+    <div class="am-g mb80">
+        <div class="am-u-lg-12">
+            <h1 class="get-title">为什么要制作小程序？</h1>
+            <p class="get-intr">
+                流量时代，微信小程序可以为企业带来什么？
+            </p>
+        </div>
+    </div>
+    <div class="am-container">
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4"><img class="whyimg lazy_load" src="/home/assets/i/grey.gif" data-original="/home/assets/i/w1.png" alt=""></div>
+            <div class="am-u-sm-12 am-u-md-4"><img class="whyimg lazy_load" src="/home/assets/i/grey.gif" data-original="/home/assets/i/w2.png" alt=""></div>
+            <div class="am-u-sm-12 am-u-md-4"><img class="whyimg lazy_load" src="/home/assets/i/grey.gif" data-original="/home/assets/i/w3.png" alt=""></div>
+        </div>
+    </div>
+</div>
+
+<div class="hope">
+    <div class="am-g am-container mb80">
+        <div class="am-u-sm-12">
+            <h1 class="hope-title">翼升用“社交+”为企业实现业绩增长</h1>
+            <p class="get-intr">
+                海量垂直行业解决方案与优质配套服务助力企业扩展更多业务场景，连接更多线上与线下服务
+            </p>
+        </div>
+    </div>
+    <div class="am-g am-container mt60">
+        <div class="am-u-md-6 am-u-sm-12 hope-img">
+            <img class="howimg lazy_load" src="/home/assets/i/grey.gif" data-original="/home/assets/i/d1.png" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false,delay:400}">
+            <hr class="am-article-divider am-show-sm-only hope-hr">
+        </div>
+        <div class="am-u-md-6 am-u-sm-12 how-content" data-am-scrollspy="animation:'Fade', repeat:true,delay:300">
+            <h2 class="howtitle">可视化拖拽制作，无需代码，轻松生成</h2>
+            <p class="how-p">全程可视化UI编辑，排版布局拖拽式操作，只需根据功能需求拖拽对应组件，自由组合，模块间搭配使用，云端自动生成，真正的实现“所见即所得”，随时修改，随时上线</p>
+        </div>
+    </div>
+    <div class="am-g am-container mt60">
+        <div class="am-u-md-6 am-u-sm-12 how-content" data-am-scrollspy="animation:'Scale-up', repeat:true,delay:300">
+            <h2 class="howtitle">各种行业解决方案，</h2>
+            <h2 class="howtitle1">深挖需求，用“小程序+”解决行业痛点</h2>
+            <p class="how-p">翼升提供多达数十种成熟行业方案，切合各行业特定场景，持续更新相应功能，不断提升用户体验，助力企业拓展销售入口，实现盈利转化，带来流量销量双增长</p>
+        </div>
+        <div class="am-u-md-6 am-u-sm-12 hope-img">
+            <img class="howimg lazy_load" src="/home/assets/i/grey.gif" data-original="/home/assets/i/d2.png" alt="" data-am-scrollspy="{animation:'slide-right', repeat: false,delay:400}">
+            <hr class="am-article-divider am-show-sm-only hope-hr">
+        </div>
+    </div>
+    <div class="am-g am-container mt60">
+        <div class="am-u-md-4 am-u-sm-12 hope-img how-content">
+            <img class="howimg lazy_load" src="/home/assets/i/grey.gif" data-original="/home/assets/i/d3.png" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false,delay:300}">
+            <hr class="am-article-divider am-show-sm-only hope-hr">
+        </div>
+        <div class="am-u-md-8 am-u-sm-12 " data-am-scrollspy="animation:'Scale-up', repeat:true,delay:400">
+            <h2 class="howtitle">持续进行突破性创新，</h2>
+            <h2 class="howtitle1">提供安全可靠的技术支持，您只需专注发展您的业务</h2>
+            <p class="how-p">根据各行业的市场需求和商业场景，结合微信官方更新开放的小程序能力。翼升不断完善小程序功能，持续助力企业释放其商业价值。丰富的数据统计功能、精准的用户画像、高效的内容管理后台以及各种社会化营销模块，为企业的线上线下业务提供了更多的想象空间和创收可能</p>
+        </div>
+    </div>
+    <div class="am-g am-container mt60">
+        <div class="am-u-md-7 am-u-sm-12 how-content" data-am-scrollspy="animation:'Fade', repeat:true,delay:500">
+            <h2 class="howtitle">有了小程序却不知道该如何运营？</h2>
+            <h2 class="howtitle1">来与我们众多的合作伙伴一起交流，共同成长</h2>
+            <p class="how-p">得益于长久以来翼升为遍布各个垂直细分行业的商业机构服务的丰富经验，您在翼升除了能得到强大的技术支持和优质的服务保障，还可以从专属顾问那里获得不同行业的卓有成效的实施经验，或与众多对小程序抱有热情并正通过小程序实现业务增长和扩展的伙伴一同学习和交流</p>
+        </div>
+        <div class="am-u-md-5 am-u-sm-12 hope-img">
+            <img class="howimg lazy_load" src="/home/assets/i/grey.gif" data-original="/home/assets/i/d4.png" alt="" data-am-scrollspy="{animation:'slide-right', repeat: false,delay:300}">
+            <hr class="am-article-divider am-show-sm-only hope-hr">
+        </div>
+    </div>
+
+</div>
+
+<div class="about">
+    <div class="am-container">
+        <h1 class="who-title">他们正在使用翼升小程序</h1>
+        <h1 class="who-title mb80">开拓更多的商业场景</h1>
+        <div class="am-g">
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp1"></div></div>
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp2"></div></div>
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp3"></div></div>
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp4"></div></div>
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp5"></div></div>
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp6"></div></div>
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp7"></div></div>
+            <div class="am-u-md-3 am-u-sm-6"><div class="whoimg comp8"></div></div>
+        </div>
+    </div>
+</div>
+<div class="design">
+    <div class="am-container">
+        <h3 class="design-title">马上像他们一样，使用翼升小程序扩展更多线上线下业务，实现流量销量双增长。</h3>
+        <button class="am-btn start">开始免费制作</button>
+    </div>
+</div>
+<div class="news">
+    <div class="am-container">
+        <h1 class="hope-title">翼升资讯</h1>
+        <h3 class="get-intr">了解小程序前沿资讯，借助小程序新能力实现商业变现</h3>
+        <div class="am-g" id="news">
+        </div>
+    </div>
+</div>
+<button type="button" class="am-btn am-btn-primary" id="quickWorkOrder">问题反馈</button>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-quickWorkOrder">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">问题反馈</div>
+        <div class="am-modal-bd">
+            <div class="order_title"><span class="red">*</span>工单标题：<input type="text" id="new_worder_title"> </div>
+            <div class="question_des"><span class="red">*</span>问题描述：<textarea class="fade_back_text" name="txt" clos="100" rows="6" warp="virtual" id="new_worder_des"></textarea></div>
+            <div class="fade_back">
+                <div class="am-form-group am-form-file">
+                    <label for="doc-form-file">上传附件：</label>
+                    <button type="button" class="am-btn am-btn-danger am-btn-sm" id="btn111">
+                        <i class="am-icon-cloud-upload"></i> 上传附件</button>
+                    <span class="des">最多上传5张图片，附件大小不得超过2M。附件支持的格式有'jpg','jpeg','bmp','png','gif','text','rar','zip','doc','docx','pdf'</span>
+                    <input id="doc-form-file" multiple type="file">
+                </div>
+                <div id="file-list"></div>
+            </div>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div id="myFooter"></div>
+<!-- /footer -->
+<script src="/home/assets/js/jquery.min.js"></script>
+<script src="/home/assets/js/jquery.lazyload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="/home/assets/js/footer.js"></script>
+<script src="/home/assets/js/amazeui.swiper.min.js"></script>
+<script>
+    var code=GetPar("code");//授权获取回调code
+    var type=GetPar("type");//登陆方式
+    var loadNews=false;//加载新闻
+    if(code){ //code在去获取openid
+        if(type == 'weixin'){
+            var url = '/home/we_chat/authorizeRedirect'
+            wxauthorize(code,url);
+        }else{//qq
+            var url = '/home/login/qqAuthorizeRedirect'
+            wxauthorize(code,url);
+        }
+    }
+    $(function() {
+        $.ajax({
+            url: '/home/rotation_chart/index',
+            type: 'post',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                if(res.status === 200){
+                    res.data.forEach(function(val){
+                        $('.am-slides').append(`<li><img class="full" src="${val.picture}" onclick="window.location.href='${val.route}'" ondragstart="return false;"></li>`)
+                    })
+                    $('.am-slider-manual').flexslider({
+                        // options
+                        animationLoop: true,
+                        slideshow: true,                // Boolean: 是否自动播放
+                        slideshowSpeed: 3000,           // Integer: ms 滚动间隔时间
+                        animationSpeed: 600,            // Integer: ms 动画滚动速度
+                        pauseOnHover: true,
+                    })
+                }
+            }
+        })
+
+        $('.am-slides > li > img').click(function (e) {
+            console.log(11)
+            e.preventDefault();
+        })
+        //兼容火狐拖拽
+        $('.full').removeAttr('draggable');
+        //百度商桥
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?59f4240077abd13af6762f16dd60ed4d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    });
+    $(window).scroll(function() {
+        if (($(this).scrollTop() + $(window).height() + 1200) >= $(document).height() && loadNews==false) {
+            loadNews=true;
+            console.log('now')
+            getNewsList();
+        }
+    });
+    $('.start').click(function () {
+       window.location.href='/home/case.html'
+    })
+    function wxauthorize(code,url) { //微信授权
+        console.log('auth',code)
+        $.ajax({
+            type: "Post",
+            url: url+"?code="+code,
+            dataType: 'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (data) {
+                console.log(data);
+                if(data.status == 200){
+                    if(data.data.auth_info){//有信息，通过
+                        $.ajax({//更新数据
+                            type:"post",
+                            url:"/home/user/getBaseInfo",
+                            data:null,
+                            dataType:'json',
+                            xhrFields: {
+                                withCredentials: true
+                            },
+                            success:function (res) {
+                                if(res.status == 200){
+                                    $(".phonenum").html(res.data.nickname);
+                                    $(".islogin").show();
+                                    $(".unlogin").hide();
+                                }else{
+                                    console.log(res.status,'400')
+                                    $(".islogin").hide();
+                                    $(".unlogin").show();
+                                }
+                            },
+                            error:function (res) {
+                                console.log('error',res)
+                            }
+
+                        })
+                    }else if(!data.data.auth_info){//没有信息跳转完善信息
+                        window.location.href = '/home/addData.html';
+                    }else{
+//                        alert(data.message);
+                    }
+                }else{
+//                    console.log(data.message);
+                }
+            },
+            error:function (res) {
+                console.log('error',res)
+                return;
+            }
+        })
+    }
+    function getNewsList() {
+        $('#news').empty();
+        $.ajax({
+            type: 'post',
+            url: '/home/article_list/index',
+            data: null,
+            dataType: 'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success(res){
+                if (res.status == 200) {
+                    let data = res.data;
+                    let len = data.length > 6 ? 6 : data.length
+                    for (let i = 0; i < len; i++) {
+                        $('#news').append(`` +
+                            `<div class="am-u-md-4 am-u-sm-6"><a href="/home/news/journalism.html?id=`+ data[i].industry_id+`"><div class="newsimg" style="background: url(`+data[i].picture+`) no-repeat;"><div class="mot"><h2 class="newstitle">`+data[i].title+`</h2><p class="newsContent">`+data[i].keywords +`</p></div></div></a></div>`)
+                    }
+                }
+            }
+        })
+    }
+    function GetPar(name) { //获取链接参数
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r != null) return decodeURIComponent(r[2]);
+        return null;
+    }
+
+    $('#quickWorkOrder').on('click', function () {
+        $('#my-quickWorkOrder').modal({
+            relatedTarget: this,
+            closeOnConfirm: false,
+            onConfirm: function (e) {
+                var that = this
+                var data = {}
+                data.question_type = 0
+                data.title = $('#new_worder_title').val()
+                data.describe = $('#new_worder_des').val()
+                data.file_arr = image ? JSON.stringify(image) : ''
+                $.ajax({
+                    type:"post",
+                    url:'/home/work_order/save',
+                    traditional:true,
+                    data: data,
+                    dataType:'json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function (res) {
+                        alert(res.message)
+                        that.close()
+                        $('#new_worder_title').val('')
+                        $('#new_worder_des').val('')
+                        $("#file-list").children().remove();
+                        arr=[];
+                        image=[]
+                    }
+                });
+            },
+            onCancel: function () {
+                $('#new_worder_title').val('')
+                $('#new_worder_des').val('')
+                $("#file-list").children().remove();
+                arr=[];
+                image=[]
+            }
+        })
+    })
+
+    var arr = [];
+    var image = [];
+    $('#doc-form-file').click(function () {
+        let Dfile = document.getElementsByClassName('upload-files')
+        if (Dfile.length >= 5) {
+            $('#doc-form-file').attr("disabled","disabled")
+            $('#doc-form-file').css("z-index","-1")
+        }
+    })
+    $('#btn111').click(function () {
+        let Dfile = document.getElementsByClassName('upload-files')
+        if (Dfile.length >= 5){
+            alert('最多上传五个附件')
+        }else{
+            $('#doc-form-file').css("z-index","20")
+            $('#doc-form-file').removeAttr("disabled")
+        }
+    })
+    $('#doc-form-file').change(function (e){
+        let files = [];
+        for (let k=0;k<this.files.length;k++){
+            files.push(this.files[k])
+        }
+        for(let i=0;i<=arr.length;i++){
+            for(let j=0;j<files.length;j++){
+                if(arr[i]==files[j].name){
+                    files.splice(j,1)
+                }
+            }
+        }
+        if(!files.length){
+            alert('已上传此文件，请重选');
+            $('#doc-form-file').val('');
+            return false
+        }
+        let dMessage = document.getElementById('file-list');
+        $.each(files, function (index) {
+            let fd = new FormData();
+            if(this.size < 1024*2024){
+                const that = this
+                // fileNames += '<div class="am-badge-div"><span class="am-badge upload-files">' + this.name + '</span><span class="deleFile" onclick="deleFile(this)">删除</span></div>';
+                arr.push(this.name);
+                fd.append('image', files[index]);
+                $.ajax({
+                    url:'/home/upload/index',
+                    type:'post',
+                    data:fd,
+                    dataType:'file',
+                    processData : false,
+                    contentType : false,
+                    async:false,
+                    complete: function (res) {
+                        let resArr = JSON.parse(res.responseText)
+                        if(resArr.status==200){
+                            let img = resArr.data.image_url;
+                            image.push(img)
+                            var fileNames = '<div class="am-badge-div">' +
+                                '<img class="deleFile" style="height: 50px;" src=" ' + img +' ">' +
+                                '<p><span>'+that.name+'</span><span style="margin-left: 10px" class="upload-files" onclick="deleFile(this)">删除</span></p></div>';
+                            $('#file-list').html(dMessage.innerHTML + fileNames);
+                        }else{
+                            alert(resArr.message)
+                        }
+                        $('#doc-form-file').val('');
+                    },
+                })
+            }else{
+                alert('文件大小过大，请重选')
+                $('#doc-form-file').val('');
+            }
+
+        });
+    });
+    function deleFile(e) { //删除详情留言附件
+        let text=$(e).prev().html();
+        $('#doc-form-file').val('');
+        $(e).parent().parent().remove();
+        let Dfile = document.getElementsByClassName('upload-files');
+        if (Dfile.length <= 5){
+            $('#doc-form-file').css("z-index","20");
+            $('#doc-form-file').removeAttr("disabled")
+        }
+        for(let i=0;i<arr.length;i++){
+            if(text==arr[i]){
+                arr.splice(i,1)
+                image.splice(i,1)
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

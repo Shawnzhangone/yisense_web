@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行业案例-翼升科技</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="翼升科技，翼升小程序，小程序案列">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta name=“robots” content=“noarchive”>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <link rel="stylesheet" href="/home/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/home/assets/css/common.css"/>
+    <link rel="stylesheet" href="/home/assets/css/app.css"/>
+    <link rel="stylesheet" href="/home/assets/css/case.css">
+    <style>
+        #a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10,#a11,#a12,#a13,#a14,#a15{
+            display: none;
+        }
+        #a1{
+            display: block;
+        }
+        .addck a{
+            color:#ff6d00 !important;
+        }
+        [class*=am-u-]+[class*=am-u-]:last-child {
+            float: left ;
+        }
+        #a1{
+            display: flex;
+            flex-flow: row wrap;
+        }
+    </style>
+</head>
+<body>
+<!-- header -->
+<div id="myHeader"></div>
+<!-- /header -->
+
+<div class="am-box case-main am-g">
+    <div class="am-box-img am-u-sm-12 am-u-lg-12">
+
+    </div>
+    <div class="am-box-main am-u-sm-12 am-u-md-12 am-u-lg-12">
+        <div class="am-box-container am-u-sm-centered am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <div class="am-u-sm-centered am-u-sm-9 am-u-md-9 am-u-lg-9">
+                <ol class="am-breadcrumb" id="caseType">
+                    <li onclick="nowItem.call(this);"><a href="javascript:;" data-id="" onclick="getTypeCase.call(this);" >全部</a></li>
+                </ol>
+            </div>
+            <div class="contentDiv">
+                <div class="am-box-list am-u-sm-centered am-u-sm-8 am-u-md-8 am-u-lg-8" id="a1">
+
+                </div>
+            </div>
+            <!--<div class="am-box-pag am-u-sm-centered am-u-sm-8 am-u-md-8 am-u-lg-8">-->
+                <!--<ul data-am-widget="pagination" class="am-pagination am-pagination-default am-u-sm-centered am-u-sm-12 am-u-md-12 am-u-lg-12">-->
+                    <!--<li class="am-pagination-prev ">-->
+                        <!--<a href="#">上一页</a>-->
+                    <!--</li>-->
+                    <!--<li class="am-active">-->
+                        <!--<a href="#" class="am-active">1</a>-->
+                    <!--</li>-->
+                    <!--<li class="am-pagination-next">-->
+                        <!--<a href="#" class="">下一页</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        </div>
+        <!--手机端显示-->
+        <div class="am-box-qrcode am-g">
+		<h2>请用电脑访问才能进入系统制作</h2>
+            <div class="am-box-qrcode-img am-u-sm-6 am-u-md-6 am-u-lg-6 am-u-sm-centered">
+                <img src="/home/assets/i/qrcode.png" alt="">
+            </div>
+            <h3 class="am-thumbnail-caption">成都翼升科技有限公司</h3>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-cprogram1">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">新建小程序</div>
+        <div class="am-modal-bd">
+            <div class="clearfloat"><span class="am-u-sm-4" style="padding: 0">小程序名称：</span>
+                <input type="text" class="am-modal-prompt-input am-u-sm-8">
+            </div>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取 消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>下一步</span>
+        </div>
+    </div>
+</div>
+
+
+<!--填写小程序信息，打包，下载-->
+<div class="mask-protocol-xx">
+    <div class="mask-protocol-content-xx">
+        <div class="mask-protocol-close-xx"></div>
+        <div class="mask-protocol-title-xx">
+            <span class="nowser" style="color:#fd7a42">设置开发设置</span>···
+            <span class="nowser">生成</span>···
+            <span class="nowser">代码包下载</span>
+        </div>
+        <div class="guide">请在“微信公众平台-小程序-设置-开发设置”，填写以下信息</div>
+        <div class="inputBox">
+            <p class="text">
+                AppID:
+                <input type="text" placeholder="请输入AppID" class="greyi inname">
+                <a>怎么获取AppID？</a>
+            </p>
+            <p class="text text1">
+                App密钥:
+                <input type="text" placeholder="请输入App密钥" class="greyi inname">
+                <a>怎么获取App密钥？</a>
+            </p>
+            <p class="tip">如小程序涉及商品交易则必须填写商户ID和商户密钥</p>
+            <p class="text text2">
+                商户ID:
+                <input type="text" placeholder="请输入商户ID" class="greyi inname">
+                <a>怎么获取商户ID？</a>
+            </p>
+            <p class="text text3">
+                商户密钥:
+                <input type="text" placeholder="请输入商户密钥" class="greyi inname">
+                <a>怎么获取商户密钥？</a>
+            </p>
+            <div class="guide">还没注册微信小程序？现在就去注册</div>
+            <div class="btn-group">
+                <button class="btn" id="mask1cancel">取消</button>
+                <button class="btn btn2" id="mask1sure">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask-protocol-xx">
+    <div class="mask-protocol-content-xx">
+        <div class="mask-protocol-close-xx"></div>
+        <div class="mask-protocol-title-xx">
+            <span class="nowser">设置开发设置</span>···
+            <span class="nowser" style="color:#fd7a42">生成</span>···
+            <span class="nowser">代码包下载</span>
+        </div>
+        <div class="loading">
+            <div class="csshub-circle-loader">
+                <div class="csshub-circle-line">
+                    <div class="csshub-circle csshub-circle-blue"></div>
+                    <div class="csshub-circle csshub-circle-blue"></div>
+                    <div class="csshub-circle csshub-circle-blue"></div>
+                </div>
+                <div class="csshub-circle-line">
+                    <div class="csshub-circle csshub-circle-yellow"></div>
+                    <div class="csshub-circle csshub-circle-yellow"></div>
+                    <div class="csshub-circle csshub-circle-yellow"></div>
+                </div>
+                <div class="csshub-circle-line">
+                    <div class="csshub-circle csshub-circle-red"></div>
+                    <div class="csshub-circle csshub-circle-red"></div>
+                    <div class="csshub-circle csshub-circle-red"></div>
+                </div>
+                <div class="csshub-circle-line">
+                    <div class="csshub-circle csshub-circle-green"></div>
+                    <div class="csshub-circle csshub-circle-green"></div>
+                    <div class="csshub-circle csshub-circle-green"></div>
+                </div>
+            </div>
+        </div>
+        <p class="psss">代码生成中，请等待...</p>
+        <div class="inputBox">
+            <div class="btn-group" id="inputBox2">
+                <button class="btn" id="mask2return">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask-protocol-xx">
+    <div class="mask-protocol-content-xx">
+        <div class="mask-protocol-close-xx"></div>
+        <div class="mask-protocol-title-xx">
+            <span class="nowser">设置开发设置</span>···
+            <span class="nowser">生成</span>···
+            <span class="nowser" style="color:#fd7a42">代码包下载</span>
+        </div>
+        <div class="download">
+            <div class="downloadImg">
+                <img src="/home/assets/caseImg/zip.jpg" alt="">
+            </div>
+            <div id="downBox"></div>
+        </div>
+
+    </div>
+</div>
+
+<!--新手引导-->
+<div class="guides" style="display: none">
+    <div class="guide-content">
+        <div class="step1">
+            <img src="" class="img1">
+            <img src="./assets/caseImg/step/step1.png" class="img2">
+            <img src="./assets/caseImg/step/close.svg" class="step-close">
+        </div>
+        <div class="step2">
+            <p>
+                <img src="">
+                <span></span>
+            </p>
+            <img src="./assets/caseImg/step/step2.png" class="step2-img step-close">
+        </div>
+        <img src="./assets/caseImg/step/jump.png" class="jump-img step-close">
+    </div>
+</div>
+
+<!-- footer -->
+<div id="myFooter"></div>
+<!-- /footer -->
+<script src="/home/assets/js/jquery.min.js"></script>
+<script src="/home/assets/js/jquery.lazyload.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="/home/assets/js/footer.js"></script>
+
+<script src="/home/assets/js/case.js"></script>
+</body>
+</html>

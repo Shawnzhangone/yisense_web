@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻资讯-翼升小程序</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="keywords" content="成都翼升科技有限公司，翼升科技，翼升小程序，微信小程序开发，微信小程序制作，第三方小程序制作">
+    <meta name="description" content="翼升小程序为商户便捷高效自主生成小程序，并提供相应的营销模块。">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta name=“robots” content=“noarchive”>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/png" href="/home/assets/i/favicon.png">
+    <link rel="stylesheet" href="/home/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/home/assets/css/common.css"/>
+    <link rel="stylesheet" href="/home/assets/css/app.css"/>
+    <style>
+        .am-box-product-main{
+            /*margin-top: 92px;*/
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+        }
+        .journalism-main h1{
+            margin-top: 50px;
+            text-align: center;
+        }
+        .journalism-main-txt{
+            float: none;
+            margin-left: auto;
+            margin-right: auto
+        }
+        .journalism-main-txt img{
+            max-width: 99%;
+
+        }
+        .ql-align-center {
+            text-align: center;
+        }
+        .journalism-main-txt p {text-indent: 1.5em;}
+    </style>
+</head>
+<body>
+<!-- header -->
+<div id="myHeader"></div>
+<!-- /header -->
+<div class="am-box-product-main am-g">
+<div class="am-u-log-12 am-u-md-12 am-u-sm-12 journalism-main">
+    <h1 class="title">既能2C和2B，也能2G，小程序再不是原来的“用完即走”</h1>
+    <p style="text-align: right;padding-right: 35%" >时间：<span class="time"></span></p>
+    <div class="journalism-main-txt .am-u-sm-centered am-u-lg-centered am-u-log-8 am-u-md-8 am-u-sm-8">
+    </div>
+</div>
+</div>
+<!-- footer -->
+<div id="myFooter"></div>
+<!-- /footer -->
+<script src="/home/assets/js/jquery.min.js"></script>
+<script src="/home/assets/js/jquery.lazyload.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="/home/assets/js/footer.js"></script>
+
+<script>
+    $(function () {
+       const id = GetPar('id');
+        getNew(id);
+    });
+    function getNew(id) {
+        $.ajax({
+            type:'post',
+            url:'/home/article_list/descriptionquery',
+            data:{'industry_id':id},
+            dataType:'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success(res){
+                if(res.status == 200){
+                    let data = res.data;
+                    $('.title').html(data.title);
+                    $('.time').html(data.create_date);
+                    $('.journalism-main-txt').html(data.description);
+                }else{
+                    alert(res.message)
+                }
+            }
+        })
+    }
+    function GetPar(name) { //获取链接参数
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r != null) return decodeURIComponent(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

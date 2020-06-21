@@ -1,0 +1,54 @@
+
+<header class="am-topbar am-topbar-fixed-top" style="background-color:#fff;">
+  <div class="am-container am-container1">
+    <h1 class="am-topbar-brand">
+      <a style='outline: none; display:inline-block' href="/home/index.html" title="成都翼升科技有限公司"><img src="/home/assets/i/logo.png" alt="成都翼升科技有限公司" title="翼升小程序"></a>
+    </h1>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+            data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span
+        class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="collapse-head">
+
+      <div class="am-topbar-right" >
+      <a href="/home/logout" class="islogin"><button class="out logout" ></button></a>
+	  <a href="/home/register" class="unlogin"><button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm login"> 注册</button></a>
+      </div>
+
+      <div class="am-topbar-right">
+	  <a class="logout islogin" href="/home/user/usercenter.html"><img onmouseover="mOver()" id="img" class="am-circle userimg"  src="/home/assets/i/header.png" alt="" width="46" height="46"><span class="phonenum"></span></a>
+      <a href="/home/login" class="unlogin"><button class="am-btn am-btn-primary am-topbar-btn am-btn-sm login"> 登录</button></a>
+      </div>
+      <ul class="am-nav am-nav-pills am-topbar-nav">
+        <li><a class="navLink" href="javascript:;" onclick="productNav()"><p>产 品</p><p>product</p></a></li>
+        <li><a class="navLink" href="/home/server.html"><p>服 务</p><p>service</p></a></li>
+        <li><a class="navLink" href="/home/case.html"><p>行业案例</p><p>case</p></a></li>
+          <li><a class="navLink" href="/home/help/index.html"><p>帮助中心</p><p>help</p></a></li>
+      </ul>
+       <div class="popup" id="popupId">
+            <div class="triangle"></div>
+            <div class="popupTop">
+                <p>个人中心</p>
+            </div>
+           <div class="popupMsg">
+               <p class="p1" style="padding-left: 10px;font-size: 14px">消息通知</p>
+               <p class="redCircle allMsg" style="display: none"></p>
+           </div>
+       </div>
+    </div>
+  </div>
+    <div class="productBox">
+        <div class="productNav am-container am-container1">
+            <ul>
+                <li><a class="proLink" href="/home/product.html"><p>翼升小程序</p><p class="prop2">帮助企业快速拥有自己的小程序</p></a></li>
+                <li><a class="proLink" href="/home/product1.html"><p>翼升智能名片</p><p class="prop2">帮助企业销售获客的智能小程序名片</p></a></li>
+                <li><a class="proLink" href="/home/product2.html"><p>翼升SCRM</p><p class="prop2">帮助企业更快更智能地掌握销售状况</p></a></li>
+            </ul>
+        </div>
+    </div>
+
+</header>
+<script src="/home/assets/js/header.js"></script>
+
+
